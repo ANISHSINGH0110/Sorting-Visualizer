@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="controls-container">
+            <div class="control-group">
+                <label>Algorithm</label>
+                <select id="algorithm-select">
+                    <option>Selection Sort</option>
+                    <option>Bubble Sort</option>
+                    <option>Insertion Sort</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label>Speed</label>
+                <select id="speed-select">
+                    <option>Very Slow</option>
+                    <option>Slow</option>
+                    <option>Medium</option>
+                    <option>Fast</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label>Array Type</label>
+                <select id="array-type-select">
+                    <option>Random</option>
+                    <option>Custom</option>
+                </select>
+            </div>
+
+            <div class="control-group" id="custom-array-input" style="display: none;">
+                <label>Enter Array (comma-separated numbers)</label>
+                <input type="text" id="custom-array-text" placeholder="e.g., 50, 100, 200, 75">
+            </div>
+
+            <div class="control-group">
+                <label>Size</label>
+                <select id="size-select">
+                    <option>15</option>
+                    <option>10</option>
+                    <option>20</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label>Bar Color</label>
+                <select id="bar-color">
+                    <option>Blue</option>
+                    <option>Red</option>
+                    <option>Green</option>
+                </select>
+            </div>
+
+            <button id="randomize-btn" class="randomize-btn">Randomize Array</button>
+            <button id="sort-btn" class="sort-btn">Sort!</button>
+        </div>
+
+        <div class="array-container" id="array-container">
+            <!-- Bars will be dynamically generated here -->
+        </div>
+
+        <div class="footer">
+            Feeling lazy? its OK, just click Sort!
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
