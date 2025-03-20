@@ -2,7 +2,7 @@
 
 Welcome to the Sorting Visualizer! 🚀 This interactive web application lets you visualize sorting algorithms in action. Customize the array, select different sorting methods, adjust speed, and observe how the sorting takes place in real-time.
 
-# 🎯 Features
+## 🎯 Features
 
 ✅ Choose Your Sorting Algorithm: Selection Sort, Bubble Sort, and Insertion Sort.
 
@@ -18,9 +18,9 @@ Welcome to the Sorting Visualizer! 🚀 This interactive web application lets yo
 ![Sorting Visualizer](sorting-visualizer.png)
 
 
-# 📂 Project Structure
+## 📂 Project Structure
 
-📁 Sorting Visualizer
+#### 📁 Sorting Visualizer
 
 ├── 📄 index.html   # Main structure of the webpage
 
@@ -28,7 +28,7 @@ Welcome to the Sorting Visualizer! 🚀 This interactive web application lets yo
 
 ├── 📜 script.js    # Logic for sorting and visualization
 
-# 🚀 Getting Started
+## 🚀 Getting Started
 
  1️⃣ Clone the Repository
 
@@ -47,7 +47,7 @@ Adjust speed and size.
 
 Choose a color and start sorting!
 
-# 🖥️ Technologies Used
+## 🖥️ Technologies Used
 
 HTML – For structuring the web page
 
@@ -55,7 +55,7 @@ CSS – For styling and layout
 
 JavaScript – For sorting logic and animations
 
-# 📌 Future Improvements
+## 📌 Future Improvements
 
 🔹 Add Merge Sort, Quick Sort, and Heap Sort.
 
@@ -63,9 +63,9 @@ JavaScript – For sorting logic and animations
 
 🔹 Include step-by-step explanations for each sorting step.
 
-# 🏆 Contributing
+## 🏆 Contributing
 
 Feel free to fork, contribute, or report issues. Your contributions are always welcome! 😊
 
 
-# 🚀 Happy Sorting! 🎉
+## 🚀 Happy Sorting! 🎉
