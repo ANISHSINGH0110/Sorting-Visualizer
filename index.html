@@ -3,72 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorting Visualizer</title>
+    <title>Advanced Sorting Visualizer</title>
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
     <div class="container">
-        <div class="controls-container">
-            <div class="control-group">
-                <label>Algorithm</label>
-                <select id="algorithm-select">
-                    <option>Selection Sort</option>
-                    <option>Bubble Sort</option>
-                    <option>Insertion Sort</option>
-                </select>
+        <header>
+            <h1>Sorting Algorithm Visualizer</h1>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="single">Single Algorithm</button>
+                <button class="tab-btn" data-tab="compare">Compare Algorithms</button>
+            </div>
+            
+        </header>
+
+        <div class="tab-content active" id="single-tab">
+            <div class="controls-container">
+                <div class="control-group">
+                    <label>Algorithm</label>
+                    <select id="algorithm-select">
+                        <option>Selection Sort</option>
+                        <option>Bubble Sort</option>
+                        <option>Insertion Sort</option>
+                        <option>Merge Sort</option>
+                        <option>Quick Sort</option>
+                        <option>Heap Sort</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>Animation Speed</label>
+                    <div class="slider-container">
+                        <input type="range" id="speed-slider" min="1" max="100" value="50">
+                        <span id="speed-value">Medium</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Array Type</label>
+                    <select id="array-type-select">
+                        <option>Random</option>
+                        <option>Nearly Sorted</option>
+                        <option>Reversed</option>
+                        <option>Few Unique</option>
+                        <option>Custom</option>
+                    </select>
+                </div>
+
+                <div class="control-group" id="custom-array-input" style="display: none;">
+                    <label>Enter Array (comma-separated numbers)</label>
+                    <input type="text" id="custom-array-text" placeholder="e.g., 50, 100, 200, 75">
+                </div>
+
+                <div class="control-group">
+                    <label>Size: <span id="size-value">50</span></label>
+                    <input type="range" id="size-slider" min="5" max="100" value="50">
+                </div>
+
+                <div class="control-group">
+                    <label>Bar Color</label>
+                    <select id="bar-color">
+                        <option>Blue</option>
+                        <option>Red</option>
+                        <option>Green</option>
+                        <option>Purple</option>
+                        <option>Orange</option>
+                    </select>
+                </div>
             </div>
 
-            <div class="control-group">
-                <label>Speed</label>
-                <select id="speed-select">
-                    <option>Very Slow</option>
-                    <option>Slow</option>
-                    <option>Medium</option>
-                    <option>Fast</option>
-                </select>
+            <div class="button-container">
+                <button id="randomize-btn" class="btn">New Array</button>
+                <button id="sort-btn" class="btn primary">Sort!</button>
+                <div class="step-controls">
+                    <button id="pause-btn" class="btn control-btn" disabled>⏸️ Pause</button>
+                    <button id="step-btn" class="btn control-btn" disabled>⏯️ Step</button>
+                    <button id="resume-btn" class="btn control-btn" disabled>▶️ Resume</button>
+                </div>
+            </div>
+            
+
+            <div class="visualization-container">
+                <div class="array-container" id="array-container">
+                    <!-- Bars will be dynamically generated here -->
+                </div>
+                
+                <div class="stats-container">
+                    <div class="array-stats">
+                        <div class="stat">
+                            <span class="stat-label">Comparisons:</span>
+                            <span id="comparison-count">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Swaps:</span>
+                            <span id="swap-count">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Array Access:</span>
+                            <span id="array-access-count">0</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="control-group">
-                <label>Array Type</label>
-                <select id="array-type-select">
-                    <option>Random</option>
-                    <option>Custom</option>
-                </select>
+            <div class="color-legend">
+                <div class="legend-item">
+                    <div class="color-box default"></div>
+                    <span>Unsorted</span>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box comparing"></div>
+                    <span>Comparing</span>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box selected"></div>
+                    <span>Selected</span>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box sorted"></div>
+                    <span>Sorted</span>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box swapping"></div>
+                    <span>Swapping</span>
+                </div>
             </div>
-
-            <div class="control-group" id="custom-array-input" style="display: none;">
-                <label>Enter Array (comma-separated numbers)</label>
-                <input type="text" id="custom-array-text" placeholder="e.g., 50, 100, 200, 75">
-            </div>
-
-            <div class="control-group">
-                <label>Size</label>
-                <select id="size-select">
-                    <option>15</option>
-                    <option>10</option>
-                    <option>20</option>
-                </select>
-            </div>
-
-            <div class="control-group">
-                <label>Bar Color</label>
-                <select id="bar-color">
-                    <option>Blue</option>
-                    <option>Red</option>
-                    <option>Green</option>
-                </select>
-            </div>
-
-            <button id="randomize-btn" class="randomize-btn">Randomize Array</button>
-            <button id="sort-btn" class="sort-btn">Sort!</button>
         </div>
 
-        <div class="array-container" id="array-container">
-            <!-- Bars will be dynamically generated here -->
+        <div class="tab-content" id="compare-tab">
+            <div class="compare-controls">
+                <div class="control-group">
+                    <label>Algorithms to Compare</label>
+                    <div class="algorithm-checkboxes">
+                        <label><input type="checkbox" class="algo-checkbox" value="Selection Sort" checked> Selection Sort</label>
+                        <label><input type="checkbox" class="algo-checkbox" value="Bubble Sort" checked> Bubble Sort</label>
+                        <label><input type="checkbox" class="algo-checkbox" value="Insertion Sort"> Insertion Sort</label>
+                        <label><input type="checkbox" class="algo-checkbox" value="Merge Sort"> Merge Sort</label>
+                        <label><input type="checkbox" class="algo-checkbox" value="Quick Sort"> Quick Sort</label>
+                        <label><input type="checkbox" class="algo-checkbox" value="Heap Sort"> Heap Sort</label>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Array Size: <span id="compare-size-value">20</span></label>
+                    <input type="range" id="compare-size-slider" min="5" max="50" value="20">
+                </div>
+
+                <div class="control-group">
+                    <label>Animation Speed</label>
+                    <div class="slider-container">
+                        <input type="range" id="compare-speed-slider" min="1" max="100" value="50">
+                        <span id="compare-speed-value">Medium</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Array Type</label>
+                    <select id="compare-array-type">
+                        <option>Random</option>
+                        <option>Nearly Sorted</option>
+                        <option>Reversed</option>
+                        <option>Few Unique</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button id="compare-new-array-btn" class="btn">New Array</button>
+                <button id="compare-start-btn" class="btn primary">Start Comparison</button>
+            </div>
+
+            <div id="comparison-container">
+                <!-- Algorithm comparison containers will be added here -->
+            </div>
         </div>
 
-        <div class="footer">
-            Feeling lazy? its OK, just click Sort!
+        <div class="algorithm-info-section">
+            <div class="complexity-table">
+                <h3>Algorithm Complexity</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Algorithm</th>
+                            <th>Time (Best)</th>
+                            <th>Time (Average)</th>
+                            <th>Time (Worst)</th>
+                            <th>Space</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Selection Sort</td>
+                            <td>O(n²)</td>
+                            <td>O(n²)</td>
+                            <td>O(n²)</td>
+                            <td>O(1)</td>
+                        </tr>
+                        <tr>
+                            <td>Bubble Sort</td>
+                            <td>O(n)</td>
+                            <td>O(n²)</td>
+                            <td>O(n²)</td>
+                            <td>O(1)</td>
+                        </tr>
+                        <tr>
+                            <td>Insertion Sort</td>
+                            <td>O(n)</td>
+                            <td>O(n²)</td>
+                            <td>O(n²)</td>
+                            <td>O(1)</td>
+                        </tr>
+                        <tr>
+                            <td>Merge Sort</td>
+                            <td>O(n log n)</td>
+                            <td>O(n log n)</td>
+                            <td>O(n log n)</td>
+                            <td>O(n)</td>
+                        </tr>
+                        <tr>
+                            <td>Quick Sort</td>
+                            <td>O(n log n)</td>
+                            <td>O(n log n)</td>
+                            <td>O(n²)</td>
+                            <td>O(log n)</td>
+                        </tr>
+                        <tr>
+                            <td>Heap Sort</td>
+                            <td>O(n log n)</td>
+                            <td>O(n log n)</td>
+                            <td>O(n log n)</td>
+                            <td>O(1)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="current-algorithm-info">
+                <!-- Current algorithm details will appear here -->
+            </div>
         </div>
     </div>
 
