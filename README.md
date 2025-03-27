@@ -15,7 +15,10 @@ Welcome to the Sorting Visualizer! 🚀 This interactive web application lets yo
 ✅ Performance Insights: View the number of operations taken by each algorithm.
 
 ## 📸 Preview
-![Sorting Visualizer](sorting-visualizer.png)
+![Sorting Visualizer](sorting-visualizer1.png)
+![Sorting Visualizer](sorting-visualizer2.png)
+![Sorting Visualizer](sorting-visualizer3.png)
+
 
 
 ## 📂 Project Structure
