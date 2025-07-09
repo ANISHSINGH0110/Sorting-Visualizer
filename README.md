@@ -1,19 +1,51 @@
 # Sorting Visualizer
 
-Welcome to the Sorting Visualizer! 🚀 This interactive web application lets you visualize sorting algorithms in action. Customize the array, select different sorting methods, adjust speed, and observe how the sorting takes place in real-time.
+Welcome to the Sorting Visualizer! 🚀 This interactive web application allows you to visualize how various sorting algorithms work in real-time. Customize arrays, tweak animation speeds, and observe how sorting operations take place step-by-step.
 
-## 🎯 Features
+#### 🌐 Live Demo: https://sorting-visualizer-blue-kappa.vercel.app/
 
-✅ Choose Your Sorting Algorithm: Selection Sort, Bubble Sort, and Insertion Sort.
+# 🎯 Features
 
-✅ Adjust Sorting Speed: Choose from Very Slow, Slow, Medium, or Fast.
+✅ Algorithms Supported:
 
-✅ Custom or Random Array: Input your own numbers or generate a random array.
+Selection Sort
 
-✅ Size and Color Customization: Modify array size and bar colors for better visualization.
+Bubble Sort
 
-✅ Performance Insights: View the number of operations taken by each algorithm.
+Insertion Sort
 
+Merge Sort
+
+Quick Sort
+
+Heap Sort
+
+✅ Animation Speed Control:
+Choose from Very Slow, Slow, Medium, or Fast.
+
+✅ Array Customization:
+
+Generate a Random Array
+
+Enter a Custom Array
+
+✅ Visualization Customization:
+
+Adjust Array Size
+
+Choose Bar Color (e.g., Blue, Red, Green)
+
+✅ Real-Time Metrics:
+Displays:
+
+Number of Comparisons
+
+Number of Swaps
+
+Number of Array Accesses
+
+✅ Algorithm Complexity Table:
+Get insight into time & space complexity for each algorithm.
 ## 📸 Preview
 ![Sorting Visualizer](sorting-visualizer1.png)
 ![Sorting Visualizer](sorting-visualizer2.png)
@@ -58,17 +90,19 @@ CSS – For styling and layout
 
 JavaScript – For sorting logic and animations
 
-## 📌 Future Improvements
+# 📌 Future Improvements
 
-🔹 Add Merge Sort, Quick Sort, and Heap Sort.
+🔹 Rebuild using React.js for better scalability
 
-🔹 Implement React.js for enhanced visualization.
+🔹 Add step-by-step algorithm walkthroughs
 
-🔹 Include step-by-step explanations for each sorting step.
+🔹 Implement an algorithm comparison mode
 
-## 🏆 Contributing
+🔹 Support for dual sorting visual display
+
+# 🏆 Contributing
 
 Feel free to fork, contribute, or report issues. Your contributions are always welcome! 😊
 
 
-## 🚀 Happy Sorting! 🎉
+# 🚀 Happy Sorting! 🎉
